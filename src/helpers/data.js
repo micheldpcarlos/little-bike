@@ -13,7 +13,7 @@ export const processRidesData = (ridesData) => {
   // Include a uid to help us with indexes and data visualization
   return newRidesData.map((ride, index) => {
     // using index, since this list won't change
-    // so we can save some processing time generation uids
+    // we can save some processing time by not using uuidv4
     return { ...ride, id: index + 1 };
   });
 };

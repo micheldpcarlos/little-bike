@@ -1,5 +1,8 @@
+import { processRidesData } from "../helpers/data";
+
 export const getBikeRides = async () => {
-  const bikeRidesAPIAddress = "https://lo-interview.s3.us-west-2.amazonaws.com/trips.json";
+  const bikeRidesAPIAddress =
+    "https://lo-interview.s3.us-west-2.amazonaws.com/trips.json";
 
   const response = await fetch(bikeRidesAPIAddress);
 
@@ -8,5 +11,5 @@ export const getBikeRides = async () => {
 
   const data = await response.json();
 
-  return data.data;
+  return processRidesData(data);
 };

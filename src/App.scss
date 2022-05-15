@@ -1,8 +1,34 @@
+// Antd Design Styles
+@import "~antd/dist/antd.css";
+
 .logo {
   height: 32px;
   margin: 16px;
   background: rgba(255, 255, 255, 0.2);
 }
-.site-layout .site-layout-background {
-  background: #fff;
+
+.sider-layout {
+  overflow: auto;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.main-layout {
+  margin-left: 200px;
+  height: 100vh;
+  display: flex;
+  overflow: auto;
+
+  .ant-layout-content {
+    flex: 1;
+    margin: 16px;
+  }
+
+  &-content {
+    background: #fff;
+    height: 100%;
+  }
 }

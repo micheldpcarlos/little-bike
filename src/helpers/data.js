@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 /**
  *
  * @param {Array} ridesData Array of rides from little otter test
@@ -13,7 +11,9 @@ export const processRidesData = (ridesData) => {
   );
 
   // Include a uid to help us with indexes and data visualization
-  return newRidesData.map((ride) => {
-    return { ...ride, id: uuid() };
+  return newRidesData.map((ride, index) => {
+    // using index, since this list won't change
+    // so we can save some processing time generation uids
+    return { ...ride, id: index + 1 };
   });
 };

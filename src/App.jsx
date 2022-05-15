@@ -16,7 +16,10 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getBikeRides().then((bikes) => setLoading(false));
+    getBikeRides().then((bikes) => {
+      setLoading(false);
+      console.log(bikes);
+    });
   }, []);
 
   return (

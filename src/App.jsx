@@ -6,8 +6,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { getBikeRides } from "./http/rides";
 
 import { Layout, Menu } from "antd";
-import { VideoCameraOutlined } from "@ant-design/icons";
+
 import Loader from "./components/Loader";
+import Sidebar from "./components/Sidebar";
 
 const { Content, Sider } = Layout;
 
@@ -24,23 +25,7 @@ function App() {
         <Loader />
       ) : (
         <Layout hasSider>
-          <Sider theme="light" className="sider-layout">
-            <div className="logo"> BIKE RIDES </div>
-            <Menu theme="light" mode="inline" defaultSelectedKeys={["1"]}>
-              <Menu.Item key="1">
-                <Link to="/">
-                  <VideoCameraOutlined />
-                  <span>Dashboard</span>
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="2">
-                <Link to="/rides">
-                  <VideoCameraOutlined />
-                  <span>Rides</span>
-                </Link>
-              </Menu.Item>
-            </Menu>
-          </Sider>
+          <Sidebar />
           <Layout className="main-layout">
             <Content>
               <Routes>

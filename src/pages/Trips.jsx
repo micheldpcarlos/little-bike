@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, useRef } from "react";
 import { Table } from "antd";
 
 import genderTypes from "../constants/gender";
+import { secondsToHms } from "../helpers/data";
 
 import "./Trips.scss";
 
@@ -111,10 +112,7 @@ function App(props) {
       dataIndex: "tripduration",
       key: "tripduration",
       sorter: (a, b) => a.tripduration - b.tripduration,
-      render: (text, object) =>
-        `${Math.floor(object.tripduration / 60)}h${
-          object.tripduration % 60
-        }min`,
+      render: (text) => secondsToHms(text),
       width: 150,
     },
     {

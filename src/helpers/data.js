@@ -17,3 +17,20 @@ export const processTripsData = (tripsData) => {
     return { ...ride, id: index + 1 };
   });
 };
+
+/**
+ *
+ * @param {Number} timeInSecconds
+ * @returns String with formated hours, min and sec
+ */
+export const secondsToHms = (timeInSecconds) => {
+  const secconds = Number(timeInSecconds);
+  const h = Math.floor(secconds / 3600);
+  const m = Math.floor((secconds % 3600) / 60);
+  const s = Math.floor((secconds % 3600) % 60);
+
+  var hDisplay = h > 0 ? h + (h === 1 ? "h " : "h ") : "";
+  var mDisplay = m > 0 ? m + (m === 1 ? "m " : "m ") : "";
+  var sDisplay = s > 0 ? s + (s === 1 ? "s" : "s") : "";
+  return hDisplay + mDisplay + sDisplay;
+};

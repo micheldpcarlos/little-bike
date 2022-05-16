@@ -1,0 +1,10 @@
+.dashboard {
+  min-height: 100%;
+  padding: 15px;
+
+  .info-widgets {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+  }
+}

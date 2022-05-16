@@ -1,11 +1,10 @@
-import { VideoCameraOutlined } from "@ant-design/icons";
+import { BarChartOutlined, UnorderedListOutlined } from "@ant-design/icons";
 
 import { Link, useLocation } from "react-router-dom";
 
 import { Layout, Menu } from "antd";
 
 import "./Sidebar.scss";
-
 
 const { Sider } = Layout;
 
@@ -14,7 +13,7 @@ function Sidebar() {
 
   return (
     <Sider theme="light" className="sider-layout">
-      <div className="logo"> BIKE RIDES </div>
+      <div className="logo"> BIKE TRIPS </div>
       <Menu
         theme="light"
         mode="inline"
@@ -22,14 +21,14 @@ function Sidebar() {
       >
         <Menu.Item key="/">
           <Link to="/">
-            <VideoCameraOutlined />
+            <BarChartOutlined />
             <span>Dashboard</span>
           </Link>
         </Menu.Item>
-        <Menu.Item key="/rides">
-          <Link to="/rides">
-            <VideoCameraOutlined />
-            <span>Rides</span>
+        <Menu.Item key="/trips">
+          <Link to="/trips">
+            <UnorderedListOutlined />
+            <span>Trips</span>
           </Link>
         </Menu.Item>
       </Menu>

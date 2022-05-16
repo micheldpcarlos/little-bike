@@ -1,0 +1,22 @@
+.data-widget {
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  text-align: center;
+  justify-content: center;
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: rgb(24, 144, 255);
+  }
+
+  .info {
+    font-size: 40px;
+  }
+}

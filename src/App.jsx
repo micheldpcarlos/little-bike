@@ -3,22 +3,28 @@ import "./App.scss";
 
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import { getBikeRides } from "./http/rides";
+import { getBikeTrips } from "./http/trips";
 
-import { Layout, Menu } from "antd";
-
+import { Layout } from "antd";
 import Loader from "./components/Loader";
 import Sidebar from "./components/Sidebar";
 
-const { Content, Sider } = Layout;
+import Trips from "./pages/Trips";
+import Dashboard from "./pages/Dashboard";
+
+const { Content } = Layout;
 
 function App() {
   const [loading, setLoading] = useState(true);
+  /**
+   * This is a small project, let's stick with the simplicity of useState
+   */
+  const [tripsData, setTripsData] = useState([]);
 
   useEffect(() => {
-    getBikeRides().then((bikes) => {
+    getBikeTrips().then((bikes) => {
       setLoading(false);
-      console.log(bikes);
+      setTripsData(bikes);
     });
   }, []);
 
@@ -32,8 +38,11 @@ function App() {
           <Layout className="main-layout">
             <Content>
               <Routes>
-                <Route path="/" element={<div>DASHBOARD</div>} />
-                <Route path="/rides" element={<div>RIDES BRO</div>} />
+                <Route path="/" element={<Dashboard tripsData={tripsData} />} />
+                <Route
+                  path="/trips"
+                  element={<Trips tripsData={tripsData} />}
+                />
               </Routes>
             </Content>
           </Layout>

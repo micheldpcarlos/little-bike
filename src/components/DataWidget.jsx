@@ -1,5 +1,3 @@
-import { LoadingOutlined } from "@ant-design/icons";
-
 import "./DataWidget.scss";
 
 function DataWidget(props) {

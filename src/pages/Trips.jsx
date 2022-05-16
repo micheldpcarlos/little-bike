@@ -80,7 +80,7 @@ function App(props) {
       key: "start_station_name",
       sorter: (a, b) =>
         a.start_station_name.localeCompare(b.start_station_name),
-      width: 300,
+      width: 450,
     },
     {
       title: "Start Coord",
@@ -96,7 +96,7 @@ function App(props) {
       dataIndex: "end_station_name",
       key: "end_station_name",
       sorter: (a, b) => a.end_station_name.localeCompare(b.end_station_name),
-      width: 300,
+      width: 450,
     },
     {
       title: "End Coord",

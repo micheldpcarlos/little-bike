@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useRef } from "react";
+import React from "react";
 
 import { secondsToHms } from "../helpers/data";
 
@@ -11,7 +11,6 @@ import {
   Legend,
   ResponsiveContainer,
   BarChart,
-  CartesianGrid,
   XAxis,
   YAxis,
   Bar,
@@ -21,9 +20,6 @@ import "./Dashboard.scss";
 
 function App(props) {
   const { tripsData } = props;
-
-  const [pageSize, setPageSize] = useState(50);
-  const [scrollYSize, setScrollYSize] = useState(0);
 
   const totalTrips = tripsData.length.toLocaleString();
 
@@ -117,7 +113,7 @@ function App(props) {
           <ResponsiveContainer width="100%" height="90%">
             <BarChart width={200} height={250} data={tripDayHour}>
               <XAxis dataKey="name" />
-              <YAxis tickCount={3} />
+              <YAxis tickCount={8} />
               <Tooltip />
               <Legend />
               <Bar dataKey="count" fill="#8884d8" />
